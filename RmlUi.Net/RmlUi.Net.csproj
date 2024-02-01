@@ -4,8 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>ChickenWithLips.RmlUi</RootNamespace>    
-        <AssemblyName>ChickenWithLips.RmlUi</AssemblyName>
+        <RootNamespace>RmlUiNet</RootNamespace>    
+        <AssemblyName>RmlUiNet</AssemblyName>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
