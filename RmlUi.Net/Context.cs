@@ -1,7 +1,7 @@
 using System.Numerics;
 using System.Runtime.InteropServices;
 
-namespace ChickenWithLips.RmlUi;
+namespace RmlUiNet;
 
 public class Context : RmlBase<Context>
 {

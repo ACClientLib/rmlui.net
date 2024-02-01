@@ -1,4 +1,4 @@
-namespace ChickenWithLips.RmlUi.Exceptions;
+namespace RmlUiNet.Exceptions;
 
 public class UnknownElementTypeException : RmlExceptionBase
 {

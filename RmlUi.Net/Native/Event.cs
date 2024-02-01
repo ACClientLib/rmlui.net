@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace ChickenWithLips.RmlUi.Native;
+namespace RmlUiNet.Native;
 
 internal static class Event
 {

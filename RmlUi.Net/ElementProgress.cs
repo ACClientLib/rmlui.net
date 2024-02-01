@@ -1,4 +1,4 @@
-namespace ChickenWithLips.RmlUi;
+namespace RmlUiNet;
 
 public class ElementProgress : Element<ElementProgress>
 {

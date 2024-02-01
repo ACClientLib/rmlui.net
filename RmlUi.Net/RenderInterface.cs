@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace ChickenWithLips.RmlUi;
+namespace RmlUiNet;
 
 public abstract class RenderInterface : RmlBase<RenderInterface>
 {
