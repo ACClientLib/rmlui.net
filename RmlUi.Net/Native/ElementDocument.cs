@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace ChickenWithLips.RmlUi.Native;
+namespace RmlUiNet.Native;
 
 internal static class ElementDocument
 {

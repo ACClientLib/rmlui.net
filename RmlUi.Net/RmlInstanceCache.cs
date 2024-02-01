@@ -1,4 +1,4 @@
-namespace ChickenWithLips.RmlUi;
+namespace RmlUiNet;
 
 using System;
 using System.Collections.Generic;

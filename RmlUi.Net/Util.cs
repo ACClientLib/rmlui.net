@@ -1,6 +1,6 @@
 using ChickenWithLips.RmlUi.Exceptions;
 
-namespace ChickenWithLips.RmlUi;
+namespace RmlUiNet;
 
 internal static class Util
 {

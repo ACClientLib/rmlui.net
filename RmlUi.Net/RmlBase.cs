@@ -1,6 +1,6 @@
 using System;
 
-namespace ChickenWithLips.RmlUi;
+namespace RmlUiNet;
 
 public interface RmlBase
 {

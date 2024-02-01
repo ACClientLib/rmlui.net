@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace ChickenWithLips.RmlUi;
+namespace RmlUiNet;
 
 public interface Element
 {
