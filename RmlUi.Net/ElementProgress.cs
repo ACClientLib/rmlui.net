@@ -1,18 +1,19 @@
-namespace RmlUiNet;
-
-public class ElementProgress : Element<ElementProgress>
+namespace RmlUiNet
 {
-    #region Methods
-
-    protected ElementProgress(IntPtr ptr, bool automaticallyRegisterInCache)
-        : base(ptr, automaticallyRegisterInCache)
+    public class ElementProgress : Element<ElementProgress>
     {
-    }
+        #region Methods
 
-    internal static ElementProgress? Create(IntPtr ptr)
-    {
-        return GetOrCreateCache(ptr, ptr => new ElementProgress(ptr, false));
-    }
+        protected ElementProgress(IntPtr ptr, bool automaticallyRegisterInCache)
+            : base(ptr, automaticallyRegisterInCache)
+        {
+        }
 
-    #endregion
+        internal static ElementProgress? Create(IntPtr ptr)
+        {
+            return GetOrCreateCache(ptr, ptr => new ElementProgress(ptr, false));
+        }
+
+        #endregion
+    }
 }

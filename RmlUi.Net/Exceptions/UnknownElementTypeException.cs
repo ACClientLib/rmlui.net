@@ -1,11 +1,12 @@
-namespace RmlUiNet.Exceptions;
-
-public class UnknownElementTypeException : RmlExceptionBase
+namespace RmlUiNet.Exceptions
 {
-    public string ElementType { get; }
-
-    public UnknownElementTypeException(string elementType)
+    public class UnknownElementTypeException : RmlExceptionBase
     {
-        ElementType = elementType;
+        public string ElementType { get; }
+
+        public UnknownElementTypeException(string elementType)
+        {
+            ElementType = elementType;
+        }
     }
 }

@@ -1,18 +1,19 @@
-namespace RmlUiNet;
-
-public class ElementDataGridExpandButton : Element<ElementDataGridExpandButton>
+namespace RmlUiNet
 {
-    #region Methods
-
-    protected ElementDataGridExpandButton(IntPtr ptr, bool automaticallyRegisterInCache)
-        : base(ptr, automaticallyRegisterInCache)
+    public class ElementDataGridExpandButton : Element<ElementDataGridExpandButton>
     {
-    }
+        #region Methods
 
-    internal static ElementDataGridExpandButton? Create(IntPtr ptr)
-    {
-        return GetOrCreateCache(ptr, ptr => new ElementDataGridExpandButton(ptr, false));
-    }
+        protected ElementDataGridExpandButton(IntPtr ptr, bool automaticallyRegisterInCache)
+            : base(ptr, automaticallyRegisterInCache)
+        {
+        }
 
-    #endregion
+        internal static ElementDataGridExpandButton? Create(IntPtr ptr)
+        {
+            return GetOrCreateCache(ptr, ptr => new ElementDataGridExpandButton(ptr, false));
+        }
+
+        #endregion
+    }
 }

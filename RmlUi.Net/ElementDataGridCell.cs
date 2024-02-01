@@ -1,18 +1,19 @@
-namespace RmlUiNet;
-
-public class ElementDataGridCell : Element<ElementDataGridCell>
+namespace RmlUiNet
 {
-    #region Methods
-
-    protected ElementDataGridCell(IntPtr ptr, bool automaticallyRegisterInCache)
-        : base(ptr, automaticallyRegisterInCache)
+    public class ElementDataGridCell : Element<ElementDataGridCell>
     {
-    }
+        #region Methods
 
-    internal static ElementDataGridCell? Create(IntPtr ptr)
-    {
-        return GetOrCreateCache(ptr, ptr => new ElementDataGridCell(ptr, false));
-    }
+        protected ElementDataGridCell(IntPtr ptr, bool automaticallyRegisterInCache)
+            : base(ptr, automaticallyRegisterInCache)
+        {
+        }
 
-    #endregion
+        internal static ElementDataGridCell? Create(IntPtr ptr)
+        {
+            return GetOrCreateCache(ptr, ptr => new ElementDataGridCell(ptr, false));
+        }
+
+        #endregion
+    }
 }

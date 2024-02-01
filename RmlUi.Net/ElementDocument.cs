@@ -1,51 +1,52 @@
-namespace RmlUiNet;
-
-public class ElementDocument : Element<ElementDocument>
+namespace RmlUiNet
 {
-    #region Properties
-
-    #endregion
-
-    #region Methods
-
-    protected ElementDocument(IntPtr ptr, bool automaticallyRegisterInCache)
-        : base(ptr, automaticallyRegisterInCache)
+    public class ElementDocument : Element<ElementDocument>
     {
-    }
+        #region Properties
 
-    /// <summary>
-    /// Show the document.
-    /// </summary>
-    /// <param name="modalFlag">Flags controlling the modal state of the document, see the 'ModalFlag' description for details.</param>
-    /// <param name="focusFlag">Flags controlling the focus, see the 'FocusFlag' description for details.</param>
-    public void Show(ModalFlag modalFlag = ModalFlag.None, FocusFlag focusFlag = FocusFlag.Auto)
-    {
-        Native.ElementDocument.Show(NativePtr, modalFlag, focusFlag);
-    }
+        #endregion
 
-    /// <summary>
-    /// Hide the document.
-    /// </summary>
-    public void Hide()
-    {
-        Native.ElementDocument.Hide(NativePtr);
-    }
+        #region Methods
 
-    /// <summary>
-    /// Close the document.
-    /// </summary>
-    /// <remarks>
-    /// The destruction of the document is deferred until the next call to Context::Update().
-    /// </remarks>
-    public void Close()
-    {
-        Native.ElementDocument.Close(NativePtr);
-    }
+        protected ElementDocument(IntPtr ptr, bool automaticallyRegisterInCache)
+            : base(ptr, automaticallyRegisterInCache)
+        {
+        }
 
-    internal static ElementDocument? Create(IntPtr ptr)
-    {
-        return GetOrCreateCache(ptr, ptr => new ElementDocument(ptr, false));
-    }
+        /// <summary>
+        /// Show the document.
+        /// </summary>
+        /// <param name="modalFlag">Flags controlling the modal state of the document, see the 'ModalFlag' description for details.</param>
+        /// <param name="focusFlag">Flags controlling the focus, see the 'FocusFlag' description for details.</param>
+        public void Show(ModalFlag modalFlag = ModalFlag.None, FocusFlag focusFlag = FocusFlag.Auto)
+        {
+            Native.ElementDocument.Show(NativePtr, modalFlag, focusFlag);
+        }
 
-    #endregion
+        /// <summary>
+        /// Hide the document.
+        /// </summary>
+        public void Hide()
+        {
+            Native.ElementDocument.Hide(NativePtr);
+        }
+
+        /// <summary>
+        /// Close the document.
+        /// </summary>
+        /// <remarks>
+        /// The destruction of the document is deferred until the next call to Context::Update().
+        /// </remarks>
+        public void Close()
+        {
+            Native.ElementDocument.Close(NativePtr);
+        }
+
+        internal static ElementDocument? Create(IntPtr ptr)
+        {
+            return GetOrCreateCache(ptr, ptr => new ElementDocument(ptr, false));
+        }
+
+        #endregion
+    }
 }

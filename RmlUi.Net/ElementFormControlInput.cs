@@ -1,18 +1,19 @@
-namespace RmlUiNet;
-
-public class ElementFormControlInput : Element<ElementFormControlInput>
+namespace RmlUiNet
 {
-    #region Methods
-
-    protected ElementFormControlInput(IntPtr ptr, bool automaticallyRegisterInCache)
-        : base(ptr, automaticallyRegisterInCache)
+    public class ElementFormControlInput : Element<ElementFormControlInput>
     {
-    }
+        #region Methods
 
-    internal static ElementFormControlInput? Create(IntPtr ptr)
-    {
-        return GetOrCreateCache(ptr, ptr => new ElementFormControlInput(ptr, false));
-    }
+        protected ElementFormControlInput(IntPtr ptr, bool automaticallyRegisterInCache)
+            : base(ptr, automaticallyRegisterInCache)
+        {
+        }
 
-    #endregion
+        internal static ElementFormControlInput? Create(IntPtr ptr)
+        {
+            return GetOrCreateCache(ptr, ptr => new ElementFormControlInput(ptr, false));
+        }
+
+        #endregion
+    }
 }
