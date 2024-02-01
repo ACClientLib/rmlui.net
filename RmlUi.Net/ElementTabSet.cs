@@ -1,18 +1,19 @@
-namespace RmlUiNet;
-
-public class ElementTabSet : Element<ElementTabSet>
+namespace RmlUiNet
 {
-    #region Methods
-
-    protected ElementTabSet(IntPtr ptr, bool automaticallyRegisterInCache)
-        : base(ptr, automaticallyRegisterInCache)
+    public class ElementTabSet : Element<ElementTabSet>
     {
-    }
+        #region Methods
 
-    internal static ElementTabSet? Create(IntPtr ptr)
-    {
-        return GetOrCreateCache(ptr, ptr => new ElementTabSet(ptr, false));
-    }
+        protected ElementTabSet(IntPtr ptr, bool automaticallyRegisterInCache)
+            : base(ptr, automaticallyRegisterInCache)
+        {
+        }
 
-    #endregion
+        internal static ElementTabSet? Create(IntPtr ptr)
+        {
+            return GetOrCreateCache(ptr, ptr => new ElementTabSet(ptr, false));
+        }
+
+        #endregion
+    }
 }

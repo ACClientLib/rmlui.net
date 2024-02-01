@@ -1,18 +1,19 @@
-namespace RmlUiNet;
-
-public class ElementText : Element<ElementText>
+namespace RmlUiNet
 {
-    #region Methods
-
-    protected ElementText(IntPtr ptr, bool automaticallyRegisterInCache)
-        : base(ptr, automaticallyRegisterInCache)
+    public class ElementText : Element<ElementText>
     {
-    }
+        #region Methods
 
-    internal static ElementText? Create(IntPtr ptr)
-    {
-        return GetOrCreateCache(ptr, ptr => new ElementText(ptr, false));
-    }
+        protected ElementText(IntPtr ptr, bool automaticallyRegisterInCache)
+            : base(ptr, automaticallyRegisterInCache)
+        {
+        }
 
-    #endregion
+        internal static ElementText? Create(IntPtr ptr)
+        {
+            return GetOrCreateCache(ptr, ptr => new ElementText(ptr, false));
+        }
+
+        #endregion
+    }
 }

@@ -1,18 +1,19 @@
-namespace RmlUiNet;
-
-public class ElementForm : Element<ElementForm>
+namespace RmlUiNet
 {
-    #region Methods
-
-    protected ElementForm(IntPtr ptr, bool automaticallyRegisterInCache)
-        : base(ptr, automaticallyRegisterInCache)
+    public class ElementForm : Element<ElementForm>
     {
-    }
+        #region Methods
 
-    internal static ElementForm? Create(IntPtr ptr)
-    {
-        return GetOrCreateCache(ptr, ptr => new ElementForm(ptr, false));
-    }
+        protected ElementForm(IntPtr ptr, bool automaticallyRegisterInCache)
+            : base(ptr, automaticallyRegisterInCache)
+        {
+        }
 
-    #endregion
+        internal static ElementForm? Create(IntPtr ptr)
+        {
+            return GetOrCreateCache(ptr, ptr => new ElementForm(ptr, false));
+        }
+
+        #endregion
+    }
 }

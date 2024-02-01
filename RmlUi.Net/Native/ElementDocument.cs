@@ -1,15 +1,16 @@
 using System.Runtime.InteropServices;
 
-namespace RmlUiNet.Native;
-
-internal static class ElementDocument
+namespace RmlUiNet.Native
 {
-    [DllImport("RmlUi.Native", EntryPoint = "rml_ElementDocument_Show")]
-    public static extern void Show(IntPtr document, ModalFlag modalFlag, FocusFlag focusFlag);
+    internal static class ElementDocument
+    {
+        [DllImport("RmlUi.Native", EntryPoint = "rml_ElementDocument_Show")]
+        public static extern void Show(IntPtr document, ModalFlag modalFlag, FocusFlag focusFlag);
 
-    [DllImport("RmlUi.Native", EntryPoint = "rml_ElementDocument_Hide")]
-    public static extern void Hide(IntPtr document);
+        [DllImport("RmlUi.Native", EntryPoint = "rml_ElementDocument_Hide")]
+        public static extern void Hide(IntPtr document);
 
-    [DllImport("RmlUi.Native", EntryPoint = "rml_ElementDocument_Close")]
-    public static extern void Close(IntPtr document);
+        [DllImport("RmlUi.Native", EntryPoint = "rml_ElementDocument_Close")]
+        public static extern void Close(IntPtr document);
+    }
 }

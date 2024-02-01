@@ -1,52 +1,53 @@
 using System.Numerics;
 
-namespace RmlUiNet;
-
-public abstract class RenderInterface : RmlBase<RenderInterface>
+namespace RmlUiNet
 {
-    private Native.RenderInterface.OnRenderGeometry _onRenderGeometry;
-    private Native.RenderInterface.OnGenerateTexture _onGenerateTexture;
-    private Native.RenderInterface.OnLoadTexture _onLoadTexture;
-    private Native.RenderInterface.OnReleaseTexture _onReleaseTexture;
-
-    public RenderInterface() : base(IntPtr.Zero)
+    public abstract class RenderInterface : RmlBase<RenderInterface>
     {
-        _onRenderGeometry = RenderGeometry;
-        _onGenerateTexture = GenerateTexture;
-        _onLoadTexture = LoadTexture;
-        _onReleaseTexture = ReleaseTexture;
+        private Native.RenderInterface.OnRenderGeometry _onRenderGeometry;
+        private Native.RenderInterface.OnGenerateTexture _onGenerateTexture;
+        private Native.RenderInterface.OnLoadTexture _onLoadTexture;
+        private Native.RenderInterface.OnReleaseTexture _onReleaseTexture;
 
-        NativePtr = Native.RenderInterface.Create(
-            _onRenderGeometry,
-            _onGenerateTexture,
-            _onLoadTexture,
-            _onReleaseTexture
-        );
+        public RenderInterface() : base(IntPtr.Zero)
+        {
+            _onRenderGeometry = RenderGeometry;
+            _onGenerateTexture = GenerateTexture;
+            _onLoadTexture = LoadTexture;
+            _onReleaseTexture = ReleaseTexture;
 
-        ManuallyRegisterCache(NativePtr, this);
-    }
+            NativePtr = Native.RenderInterface.Create(
+                _onRenderGeometry,
+                _onGenerateTexture,
+                _onLoadTexture,
+                _onReleaseTexture
+            );
 
-    public virtual void RenderGeometry(Vertex[] vertices, int vertexCount, int[] indices, int indexCount,
-        ulong texture,
-        Vector2 translation)
-    {
-    }
+            ManuallyRegisterCache(NativePtr, this);
+        }
 
-    public virtual bool GenerateTexture(out ulong textureHandle, byte[] source, int sourceSize, Vector2i sourceDimensions)
-    {
-        textureHandle = 0;
+        public virtual void RenderGeometry(Vertex[] vertices, int vertexCount, int[] indices, int indexCount,
+            ulong texture,
+            Vector2 translation)
+        {
+        }
 
-        return false;
-    }
+        public virtual bool GenerateTexture(out ulong textureHandle, byte[] source, int sourceSize, Vector2i sourceDimensions)
+        {
+            textureHandle = 0;
 
-    public virtual bool LoadTexture(out ulong textureHandle, Vector2i textureDimensions, string source)
-    {
-        textureHandle = 0;
+            return false;
+        }
 
-        return false;
-    }
+        public virtual bool LoadTexture(out ulong textureHandle, Vector2i textureDimensions, string source)
+        {
+            textureHandle = 0;
 
-    public virtual void ReleaseTexture(IntPtr textureHandle)
-    {
+            return false;
+        }
+
+        public virtual void ReleaseTexture(IntPtr textureHandle)
+        {
+        }
     }
 }

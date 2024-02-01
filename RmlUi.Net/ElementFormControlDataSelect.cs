@@ -1,18 +1,19 @@
-namespace RmlUiNet;
-
-public class ElementFormControlDataSelect : Element<ElementFormControlDataSelect>
+namespace RmlUiNet
 {
-    #region Methods
-
-    protected ElementFormControlDataSelect(IntPtr ptr, bool automaticallyRegisterInCache)
-        : base(ptr, automaticallyRegisterInCache)
+    public class ElementFormControlDataSelect : Element<ElementFormControlDataSelect>
     {
-    }
+        #region Methods
 
-    internal static ElementFormControlDataSelect? Create(IntPtr ptr)
-    {
-        return GetOrCreateCache(ptr, ptr => new ElementFormControlDataSelect(ptr, false));
-    }
+        protected ElementFormControlDataSelect(IntPtr ptr, bool automaticallyRegisterInCache)
+            : base(ptr, automaticallyRegisterInCache)
+        {
+        }
 
-    #endregion
+        internal static ElementFormControlDataSelect? Create(IntPtr ptr)
+        {
+            return GetOrCreateCache(ptr, ptr => new ElementFormControlDataSelect(ptr, false));
+        }
+
+        #endregion
+    }
 }
