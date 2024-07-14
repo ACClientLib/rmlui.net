@@ -1,4 +1,6 @@
-﻿namespace RmlUiNet
+﻿using System;
+
+namespace RmlUiNet
 {
     public static class Rml
     {
@@ -20,6 +22,11 @@
         public static void SetRenderInterface(RenderInterface renderInterface)
         {
             Native.Rml.SetRenderInterface(renderInterface.NativePtr);
+        }
+
+        public static void SetFileInterface(FileInterface fileInterface)
+        {
+            Native.Rml.SetFileInterface(fileInterface.NativePtr);
         }
 
         /// <summary>

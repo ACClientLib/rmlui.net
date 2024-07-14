@@ -18,6 +18,10 @@ RMLUI_CAPI void rml_SetSystemInterface(Rml::SystemInterface *systemInterface) {
     Rml::SetSystemInterface(systemInterface);
 }
 
+RMLUI_CAPI void rml_SetFileInterface(Rml::FileInterface* fileInterface) {
+    Rml::SetFileInterface(fileInterface);
+}
+
 RMLUI_CAPI void rml_LoadFontFace(const char *fileName, bool fallbackFace, Rml::Style::FontWeight weight) {
     Rml::LoadFontFace(fileName, fallbackFace, weight);
 }

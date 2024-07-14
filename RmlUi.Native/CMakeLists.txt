@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14...3.23)
 
 project(RmlUi.Native VERSION 1.0 LANGUAGES CXX)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
@@ -23,29 +23,24 @@ elseif(LINUX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -I. -Wall -Werror")
 endif()
 
-include(FetchContent)
-find_package(freetype CONFIG REQUIRED)
-
-FetchContent_Declare (
-    rmlui
-    GIT_REPOSITORY http://github.com/mikke89/RmlUi.git
-    GIT_TAG master
-    GIT_SHALLOW TRUE
-    GIT_PROGRESS TRUE
-)
-
-FetchContent_MakeAvailable(rmlui)
+# add rmlui library
+find_package(RmlUi REQUIRED)
 
 add_library(${PROJECT_NAME} SHARED
-    src/Context.cpp
-    src/Element.cpp
-    src/ElementDocument.cpp
-    src/Event.cpp
-    src/EventListener.h
-    src/RenderInterface.cpp
-    src/Rml.cpp
-    src/SystemInterface.cpp
-    src/Util.h
+    "src/Context.cpp"
+
+    "src/Element.cpp"
+    "src/ElementDocument.cpp"
+
+    "src/Event.cpp"
+    "src/EventListener.h"
+
+    "src/RenderInterface.cpp"
+    "src/SystemInterface.cpp"
+    "src/FileInterface.cpp"
+    
+    "src/Rml.cpp"
+    "src/Util.h"
 )
 
 include_directories(${PROJECT_NAME}
@@ -53,6 +48,6 @@ include_directories(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
-    freetype
     RmlCore
+    RmlDebugger
 )
