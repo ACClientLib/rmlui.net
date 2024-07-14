@@ -1,3 +1,5 @@
+using System;
+
 namespace RmlUiNet
 {
     public class ElementDataGridExpandButton : Element<ElementDataGridExpandButton>

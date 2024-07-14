@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 
 namespace RmlUiNet.Native
@@ -15,6 +16,9 @@ namespace RmlUiNet.Native
 
         [DllImport("RmlUi.Native", EntryPoint = "rml_SetSystemInterface")]
         public static extern void SetSystemInterface(IntPtr systemInterface);
+
+        [DllImport("RmlUi.Native", EntryPoint = "rml_SetFileInterface")]
+        public static extern void SetFileInterface(IntPtr fileInterface);
 
         [DllImport("RmlUi.Native", EntryPoint = "rml_LoadFontFace")]
         public static extern bool LoadFontFace(string fileName, bool fallbackFace, FontWeight weight);

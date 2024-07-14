@@ -2,11 +2,11 @@ using System;
 
 namespace RmlUiNet
 {
-    public interface RmlBase
+    public interface IRmlBase
     {
     }
 
-    public abstract class RmlBase<T> : RmlBase, IDisposable
+    public abstract class RmlBase<T> : IRmlBase, IDisposable
         where T : class
     {
         #region Members
@@ -40,7 +40,7 @@ namespace RmlUiNet
             return RmlInstanceCache.Instance.GetOrCreate<T>(ptr, createInstance);
         }
 
-        protected static void ManuallyRegisterCache(IntPtr ptr, RmlBase instance)
+        protected static void ManuallyRegisterCache(IntPtr ptr, IRmlBase instance)
         {
             RmlInstanceCache.Instance.ManuallyRegisterCache(ptr, instance);
         }

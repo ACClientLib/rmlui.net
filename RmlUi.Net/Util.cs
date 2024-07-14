@@ -1,4 +1,5 @@
 using RmlUiNet.Exceptions;
+using System;
 
 namespace RmlUiNet
 {

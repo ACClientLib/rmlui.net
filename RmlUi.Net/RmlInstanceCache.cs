@@ -7,7 +7,7 @@ namespace RmlUiNet
     {
         #region Members
 
-        private readonly Dictionary<IntPtr, RmlBase> _cache = new();
+        private readonly Dictionary<IntPtr, IRmlBase> _cache = new Dictionary<IntPtr, IRmlBase>();
 
         #endregion
 
@@ -37,7 +37,7 @@ namespace RmlUiNet
             return _cache[ptr] as T;
         }
 
-        public void ManuallyRegisterCache(IntPtr ptr, RmlBase instance)
+        public void ManuallyRegisterCache(IntPtr ptr, IRmlBase instance)
         {
             if (_cache.ContainsKey(ptr)) {
                 throw new InvalidOperationException("Instance already registered");
@@ -55,7 +55,7 @@ namespace RmlUiNet
 
         #endregion
 
-        public delegate RmlBase CreateInstance(IntPtr ptr);
+        public delegate IRmlBase CreateInstance(IntPtr ptr);
 
         #region Singleton
 
