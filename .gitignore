@@ -362,3 +362,6 @@ FodyWeavers.xsd
 cmake-*
 .idea
 _deps
+
+RmlUi.Native/out/
+RmlUi.Native/bin/
