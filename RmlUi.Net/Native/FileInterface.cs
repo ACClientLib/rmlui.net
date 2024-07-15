@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace RmlUiNet.Native
@@ -9,20 +10,20 @@ namespace RmlUiNet.Native
         public static extern IntPtr Create(
             OnOpen onOpen,
             OnClose onClose,
+            OnLoadFile onLoadFile,
             OnRead onRead,
             OnSeek onSeek,
             OnTell onTell,
-            OnLength onLength,
-            OnLoadFile onLoadFile
+            OnLength onLength
         );
         
         internal delegate ulong OnOpen(string path);
         
         internal delegate void OnClose(ulong file);
         
-        internal delegate ulong OnRead(
-            [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]
-            out byte[] buffer,
+        internal unsafe delegate ulong OnRead(
+            //[MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]
+            byte* buffer,
             ulong size,
             ulong file
         );

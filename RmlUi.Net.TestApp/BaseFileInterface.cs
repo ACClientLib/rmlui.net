@@ -13,23 +13,23 @@ namespace RmlUi.Net.TestApp
 
         public override void Close(ulong file)
         {
-            if (m_Streams[(int)file] == null)
+            if (m_Streams[(int)file - 1] == null)
             {
                 Console.WriteLine("ERROR: Invalid FileHandle!");
             }
 
-            m_Streams[(int)file].Dispose();
-            m_Streams[(int)file] = null;
+            m_Streams[(int)file - 1].Dispose();
+            m_Streams[(int)file - 1] = null;
         }
 
         public override ulong Length(ulong file)
         {
-            if (m_Streams[(int)file] == null)
+            if (m_Streams[(int)file - 1] == null)
             {
                 Console.WriteLine("ERROR: Invalid FileHandle!");
             }
 
-            return (ulong)m_Streams[(int)file].Length;
+            return (ulong)m_Streams[(int)file - 1].Length;
         }
 
         public override string LoadFile(string path)
@@ -45,8 +45,6 @@ namespace RmlUi.Net.TestApp
 
         public override ulong Open(string path)
         {
-            Console.WriteLine(path);
-
             if (!File.Exists(Path.Combine(BasePath, path)))
             {
                 Console.WriteLine($"ERR: File {path} doesn't exist within RmlUi files!");
@@ -58,47 +56,45 @@ namespace RmlUi.Net.TestApp
             if (openIndex != -1)
             {
                 m_Streams[openIndex] = File.Open(Path.Combine(BasePath, path), FileMode.Open, FileAccess.Read);
-                return (ulong)openIndex;
+                return (ulong)openIndex + 1;
             }
             else
             {
                 m_Streams.Add(File.Open(Path.Combine(BasePath, path), FileMode.Open, FileAccess.Read));
-                return (ulong)m_Streams.Count - 1;
+                return (ulong)m_Streams.Count;
             }
         }
 
-        public override ulong Read(out byte[] buffer, ulong size, ulong file)
+        public override ulong Read(byte[] buffer, ulong size, ulong file)
         {
-            if (m_Streams[(int)file] == null)
+            if (m_Streams[(int)file - 1] == null)
             {
                 Console.WriteLine("ERROR: Invalid FileHandle!");
             }
 
-            buffer = new byte[size];
-
-            return (ulong)m_Streams[(int)file].Read(buffer, (int)m_Streams[(int)file].Position, (int)size);
+            return (ulong)m_Streams[(int)file - 1].Read(buffer, (int)m_Streams[(int)file - 1].Position, (int)size);
         }
 
         public override bool Seek(ulong file, long offset, int origin)
         {
-            if (m_Streams[(int)file] == null)
+            if (m_Streams[(int)file - 1] == null)
             {
                 Console.WriteLine("ERROR: Invalid FileHandle!");
             }
 
-            m_Streams[(int)file].Seek(offset, (SeekOrigin)origin);
+            m_Streams[(int)file - 1].Seek(offset, (SeekOrigin)origin);
 
             return true; // we can't really tell if it was successful or not?
         }
 
         public override ulong Tell(ulong file)
         {
-            if (m_Streams[(int)file] == null)
+            if (m_Streams[(int)file - 1] == null)
             {
                 Console.WriteLine("ERROR: Invalid FileHandle!");
             }
 
-            return (ulong)m_Streams[(int)file].Position;
+            return (ulong)m_Streams[(int)file - 1].Position;
         }
     }
 }

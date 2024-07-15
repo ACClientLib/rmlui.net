@@ -1,8 +1,41 @@
-using RmlUiNet.Exceptions;
 using System;
+using System.Runtime.InteropServices;
+using RmlUiNet.Exceptions;
 
 namespace RmlUiNet
 {
+    /*
+    internal static unsafe partial class Extern
+    {
+        [DllImport("RmlUi.Native")]
+        public static extern Buffer cs_buffer_new(ulong size);
+
+        [DllImport("RmlUi.Native")]
+        public static extern void cs_buffer_free(Buffer* str);
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    internal struct Buffer
+    {
+        public long size;
+        public unsafe byte* data;
+    }
+    
+    internal static unsafe class BufferUtils
+    {
+        public static byte[] ConvertToArrayAndDelete(ref Buffer buffer)
+        {
+            var result = new Span<byte>(buffer.data, (int)buffer.size).ToArray();
+
+            fixed (Buffer* bufferPtr = &buffer)
+            {
+                Extern.cs_buffer_free(bufferPtr);
+            }
+
+            return result;
+        }
+    }*/
+
     internal static class Util
     {
         public static Element GetOrThrowElementByTypeName(IntPtr elementPtr, string elementType)

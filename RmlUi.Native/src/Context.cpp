@@ -8,7 +8,8 @@ RMLUI_CAPI void *rml_Context_New(const char *name, Rml::Vector2i dimensions, Rml
 }
 
 RMLUI_CAPI void rml_Context_Delete(Rml::Context *context) {
-    delete context;
+    if (context != nullptr)
+        delete context;
 }
 
 RMLUI_CAPI void rml_Context_Update(Rml::Context *context) {

@@ -46,6 +46,8 @@ add_library(${PROJECT_NAME} SHARED
     
     "src/Rml.cpp"
     "src/Util.h"
+    "src/Buffer.cpp"
+    "include/Buffer.h"
 )
 
 include_directories(${PROJECT_NAME}

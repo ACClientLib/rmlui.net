@@ -38,8 +38,10 @@ namespace RmlUi.Net.TestApp
             GL.ClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 
             // Create RmlUi Stuff
-            Rml.LoadFontFace("fonts/MADE Likes Slab.otf");
+            Rml.LoadFontFace("fonts/Inter-Regular.ttf");
             m_MainContext = Rml.CreateContext("RmlUi.Net Test App::Main", new Vector2i(1366, 768));
+
+            m_MainContext?.LoadDocument("layouts/demodoc.rml");
         }
 
         protected override void OnUnload()
