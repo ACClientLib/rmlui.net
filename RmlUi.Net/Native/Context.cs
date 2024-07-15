@@ -38,6 +38,18 @@ namespace RmlUiNet.Native
         [DllImport("RmlUi.Native", EntryPoint = "rml_Context_ProcessMouseButtonUp")]
         public static extern bool ProcessMouseButtonUp(IntPtr context, int buttonIndex, int keyModifierState);
 
+        [DllImport("RmlUi.Native", EntryPoint = "rml_Context_ProcessMouseWheel")]
+        public static extern bool ProcessMouseWheel(IntPtr context, Vector2f wheelDelta, int keyModifierState);
+
+        [DllImport("RmlUi.Native", EntryPoint = "rml_Context_ProcessKeyDown")]
+        public static extern bool ProcessKeyDown(IntPtr context, Input.KeyIdentifier identifier, int keyModifierState);
+
+        [DllImport("RmlUi.Native", EntryPoint = "rml_Context_ProcessKeyUp")]
+        public static extern bool ProcessKeyUp(IntPtr context, Input.KeyIdentifier identifier, int keyModifierState);
+
+        [DllImport("RmlUi.Native", EntryPoint = "rml_Context_ProcessTextInput")]
+        public static extern bool ProcessTextInput(IntPtr context, string input);
+
         [DllImport("RmlUi.Native", EntryPoint = "rml_Context_AddEventListener")]
         public static extern void AddEventListener(IntPtr context, string name, IntPtr eventListener, bool inCapturePhase);
 

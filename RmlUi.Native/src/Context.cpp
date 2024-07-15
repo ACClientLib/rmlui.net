@@ -49,6 +49,22 @@ RMLUI_CAPI bool rml_Context_ProcessMouseButtonUp(Rml::Context *context, int butt
     return context->ProcessMouseButtonUp(button_index, keyModifierState);
 }
 
+RMLUI_CAPI bool rml_Context_ProcessMouseWheel(Rml::Context* context, Rml::Vector2f wheel_delta, int key_modifier_state) {
+    return context->ProcessMouseWheel(wheel_delta, key_modifier_state);
+}
+
+RMLUI_CAPI bool rml_Context_ProcessKeyDown(Rml::Context *context, Rml::Input::KeyIdentifier identifier, int keyModifierState) {
+    return context->ProcessKeyDown(identifier, keyModifierState);
+}
+
+RMLUI_CAPI bool rml_Context_ProcessKeyUp(Rml::Context *context, Rml::Input::KeyIdentifier identifier, int keyModifierState) {
+    return context->ProcessKeyUp(identifier, keyModifierState);
+}
+
+RMLUI_CAPI bool rml_Context_ProcessTextInput(Rml::Context* context, const char* input) {
+    return context->ProcessTextInput(input);
+}
+
 RMLUI_CAPI void
 rml_Context_AddEventListener(Rml::Context *context, const char *event, Rml::EventListener *eventListener,
                              bool inCapturePhase) {
