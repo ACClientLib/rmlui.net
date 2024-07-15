@@ -121,8 +121,6 @@ namespace RmlUiNet
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
-
-            Native.Context.Delete(NativePtr);
         }
 
         #endregion
