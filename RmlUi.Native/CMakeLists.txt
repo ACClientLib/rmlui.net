@@ -47,7 +47,7 @@ include_directories(${PROJECT_NAME}
     PRIVATE include
 )
 
-target_link_libraries(${PROJECT_NAME} PUBLIC
+target_link_libraries(${PROJECT_NAME}
     RmlCore
     RmlDebugger
 )
