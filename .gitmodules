@@ -1,0 +1,6 @@
+[submodule "RmlUi.Native/ext/RmlUi"]
+	path = RmlUi.Native/ext/RmlUi
+	url = https://github.com/mikke89/RmlUi.git
+[submodule "RmlUi.Native/ext/freetype"]
+	path = RmlUi.Native/ext/freetype
+	url = https://gitlab.freedesktop.org/freetype/freetype.git

@@ -23,8 +23,13 @@ elseif(LINUX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -I. -Wall -Werror")
 endif()
 
-# add rmlui library
-find_package(RmlUi REQUIRED)
+# add external libraries
+add_subdirectory("ext/freetype")
+set(FREETYPE_LIBRARY freetype)
+set(FREETYPE_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/ext/freetype/include")
+
+set(BUILD_SHARED_LIBS OFF)
+add_subdirectory("ext/RmlUi")
 
 add_library(${PROJECT_NAME} SHARED
     "src/Context.cpp"
@@ -46,6 +51,8 @@ add_library(${PROJECT_NAME} SHARED
 include_directories(${PROJECT_NAME}
     PRIVATE include
 )
+
+target_compile_definitions(${PROJECT_NAME} PUBLIC "RMLUI_STATIC_LIB")
 
 target_link_libraries(${PROJECT_NAME}
     RmlCore
