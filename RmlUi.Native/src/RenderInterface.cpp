@@ -1,6 +1,7 @@
 #include "RmlNative.h"
 #include "RmlUi/Core/RenderInterface.h"
 #include <iostream>
+#include <string>
 
 typedef void(*onRenderGeometry)(Rml::Vertex *vertices,
                                 int num_vertices,

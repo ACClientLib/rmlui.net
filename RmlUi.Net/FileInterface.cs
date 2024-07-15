@@ -39,8 +39,8 @@ namespace RmlUiNet
         public abstract void Close(ulong file);
         public abstract ulong Read(out byte[] buffer, ulong size, ulong file);
         public abstract bool Seek(ulong file, long offset, int origin);
-        public abstract int Tell(ulong file);
-        public abstract int Length(ulong file);
+        public abstract ulong Tell(ulong file);
+        public abstract ulong Length(ulong file);
         public abstract string LoadFile(string path);
     }
 }

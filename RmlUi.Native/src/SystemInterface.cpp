@@ -1,6 +1,7 @@
 #include "RmlNative.h"
 #include "RmlUi/Core/SystemInterface.h"
 #include <iostream>
+#include <string>
 
 typedef double(*onGetElapsedTime)();
 

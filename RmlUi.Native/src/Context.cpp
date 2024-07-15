@@ -1,6 +1,7 @@
 #include "RmlNative.h"
 #include "RmlUi/Core.h"
 #include "EventListener.h"
+#include <string>
 
 RMLUI_CAPI void *rml_Context_New(const char *name, Rml::Vector2i dimensions, Rml::RenderInterface *renderInterface) {
     return Rml::CreateContext(name, dimensions, renderInterface);

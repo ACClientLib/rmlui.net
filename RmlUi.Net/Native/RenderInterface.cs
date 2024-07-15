@@ -8,7 +8,7 @@ namespace RmlUiNet.Native
     {
         [DllImport("RmlUi.Native", EntryPoint = "rml_RenderInterface_New")]
         public static extern IntPtr Create(OnRenderGeometry onRenderGeometry, OnGenerateTexture onGenerateTexture, OnLoadTexture onLoadTexture, OnReleaseTexture onReleaseTexture);
-
+        
         internal delegate void OnRenderGeometry(
             [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]
             Vertex[] vertices,
@@ -18,19 +18,19 @@ namespace RmlUiNet.Native
             int indexCount,
             ulong texture,
             Vector2 translation);
-
+        
         internal delegate bool OnGenerateTexture(
             out ulong textureHandle,
             [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
             byte[] source,
             int sourceSize,
             Vector2i sourceDimensions);
-
+        
         internal delegate bool OnLoadTexture(
             out ulong textureHandle,
             Vector2i textureDimensions,
             string source);
-
+        
         internal delegate void OnReleaseTexture(IntPtr textureHandle);
     }
 }

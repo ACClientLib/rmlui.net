@@ -15,24 +15,24 @@ namespace RmlUiNet.Native
             OnLength onLength,
             OnLoadFile onLoadFile
         );
-
+        
         internal delegate ulong OnOpen(string path);
-
+        
         internal delegate void OnClose(ulong file);
-
+        
         internal delegate ulong OnRead(
             [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]
             out byte[] buffer,
             ulong size,
             ulong file
         );
-
+        
         internal delegate bool OnSeek(ulong file, long offset, int origin);
-
-        internal delegate int OnTell(ulong file);
-
-        internal delegate int OnLength(ulong file);
-
+        
+        internal delegate ulong OnTell(ulong file);
+        
+        internal delegate ulong OnLength(ulong file);
+        
         internal delegate string OnLoadFile(string path);
     }
 }

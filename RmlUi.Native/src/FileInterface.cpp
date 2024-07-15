@@ -1,14 +1,15 @@
 #include "RmlNative.h"
 #include "RmlUi/Core/FileInterface.h"
 #include <iostream>
+#include <string>
 
 typedef Rml::FileHandle(*onOpen)(const char* path);
 typedef void(*onClose)(Rml::FileHandle file);
 typedef const char* (*onLoadFile)(const char* path);
-typedef size_t(*onRead)(unsigned char* buffer, size_t size, Rml::FileHandle file);
+typedef size_t(*onRead)(void* buffer, size_t size, Rml::FileHandle file);
 typedef bool(*onSeek)(Rml::FileHandle file, long offset, int origin);
-typedef int(*onTell)(Rml::FileHandle file);
-typedef int(*onLength)(Rml::FileHandle file);
+typedef size_t(*onTell)(Rml::FileHandle file);
+typedef size_t(*onLength)(Rml::FileHandle file);
 
 class FileInterface : public Rml::FileInterface {
 private:
@@ -48,7 +49,7 @@ public:
 	}
 
 	size_t Read(void* buffer, size_t size, Rml::FileHandle file) override {
-		return (*m_onRead)((unsigned char*)buffer, size, file);
+		return (*m_onRead)(buffer, size, file);
 	}
 
 	bool Seek(Rml::FileHandle file, long offset, int origin) override {

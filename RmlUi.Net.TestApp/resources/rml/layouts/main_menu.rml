@@ -1,0 +1,12 @@
+<rml>
+	<head>
+		<link type="text/rcss" href="styles/root.rcss"/>
+		<link type="text/rcss" href="styles/clockwork_menu.rcss"/>
+	</head>
+	<body>
+		<button class="CWMMButton">#MainMenu_StartGame</button>
+		<button class="CWMMButton">#MainMenu_Options</button>
+		<button class="CWMMButton">#MainMenu_Extras</button>
+		<button class="CWMMButton">#MainMenu_Quit</button>
+	</body>
+</rml>
