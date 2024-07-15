@@ -28,33 +28,9 @@
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <TargetPath>RmlUi.Native.dll</TargetPath>
         </ContentWithTargetPath>
-        <ContentWithTargetPath Include="..\RmlUi.Native\bin\brotlicommon.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <TargetPath>brotlicommon.dll</TargetPath>
-        </ContentWithTargetPath>
-        <ContentWithTargetPath Include="..\RmlUi.Native\bin\brotlidec.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <TargetPath>brotlidec.dll</TargetPath>
-        </ContentWithTargetPath>
-        <ContentWithTargetPath Include="..\RmlUi.Native\bin\bz2d.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <TargetPath>bz2d.dll</TargetPath>
-        </ContentWithTargetPath>
         <ContentWithTargetPath Include="..\RmlUi.Native\bin\freetyped.dll">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <TargetPath>freetyped.dll</TargetPath>
-        </ContentWithTargetPath>
-        <ContentWithTargetPath Include="..\RmlUi.Native\bin\libpng16d.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <TargetPath>libpng16d.dll</TargetPath>
-        </ContentWithTargetPath>
-        <ContentWithTargetPath Include="..\RmlUi.Native\bin\RmlCore.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <TargetPath>RmlCore.dll</TargetPath>
-        </ContentWithTargetPath>
-        <ContentWithTargetPath Include="..\RmlUi.Native\bin\zlibd1.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-            <TargetPath>zlibd1.dll</TargetPath>
         </ContentWithTargetPath>
     </ItemGroup>
 
