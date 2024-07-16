@@ -40,9 +40,10 @@ namespace RmlUiNet
             return false;
         }
 
-        public virtual bool LoadTexture(out ulong textureHandle, Vector2i textureDimensions, string source)
+        public virtual bool LoadTexture(out ulong textureHandle, out Vector2i textureDimensions, string source)
         {
             textureHandle = 0;
+            textureDimensions = new Vector2i(0, 0);
 
             return false;
         }

@@ -28,7 +28,7 @@ namespace RmlUiNet.Native
         
         internal delegate bool OnLoadTexture(
             out ulong textureHandle,
-            Vector2i textureDimensions,
+            out Vector2i textureDimensions,
             string source);
         
         internal delegate void OnReleaseTexture(IntPtr textureHandle);

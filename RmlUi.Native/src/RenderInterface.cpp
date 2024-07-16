@@ -17,7 +17,7 @@ typedef bool(*onGenerateTexture)(
         const Rml::Vector2i source_dimensions);
 
 typedef bool(*onLoadTexture)(Rml::TextureHandle &texture_handle,
-                             Rml::Vector2i texture_dimensions,
+                             Rml::Vector2i &texture_dimensions,
                              const char *source);
 
 typedef void(*onReleaseTexture)(Rml::TextureHandle texture_handle);
