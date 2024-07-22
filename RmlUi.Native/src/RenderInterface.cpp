@@ -22,21 +22,29 @@ typedef bool(*onLoadTexture)(Rml::TextureHandle &texture_handle,
 
 typedef void(*onReleaseTexture)(Rml::TextureHandle texture_handle);
 
+typedef void(*onEnableScissorRegion)(bool enable);
+
+typedef void(*onSetScissorRegion)(int x, int y, int width, int height);
+
 class RenderInterface : Rml::RenderInterface {
 private:
     ::onRenderGeometry m_onRenderGeometry;
     ::onGenerateTexture m_onGenerateTexture;
     ::onLoadTexture m_onLoadTexture;
     ::onReleaseTexture m_onReleaseTexture;
+    ::onEnableScissorRegion m_onEnableScissorRegion;
+    ::onSetScissorRegion m_onSetScissorRegion;
 
 public:
     explicit RenderInterface(::onRenderGeometry onRenderGeometry, ::onGenerateTexture onGenerateTexture,
-                             ::onLoadTexture onLoadTexture,
-                             ::onReleaseTexture onReleaseTexture) {
+                             ::onLoadTexture onLoadTexture, ::onReleaseTexture onReleaseTexture,
+                             ::onEnableScissorRegion onEnableScissorRegion, ::onSetScissorRegion onSetScissorRegion) {
         m_onRenderGeometry = onRenderGeometry;
         m_onGenerateTexture = onGenerateTexture;
         m_onLoadTexture = onLoadTexture;
         m_onReleaseTexture = onReleaseTexture;
+        m_onEnableScissorRegion = onEnableScissorRegion;
+        m_onSetScissorRegion = onSetScissorRegion;
     }
 
     void RenderGeometry(Rml::Vertex *vertices,
@@ -64,11 +72,11 @@ public:
     }
 
     void EnableScissorRegion(bool enable) override {
-//        std::cout << "RmlUi::RenderInterface::EnableScissorRegion" << "\n";
+        (*m_onEnableScissorRegion)(enable);
     }
 
     void SetScissorRegion(int x, int y, int width, int height) override {
-//        std::cout << "RmlUi::RenderInterface::SetScissorRegion" << "\n";
+        (*m_onSetScissorRegion)(x, y, width, height);
     }
 
     bool LoadTexture(Rml::TextureHandle &texture_handle,
@@ -94,7 +102,7 @@ public:
 };
 
 RMLUI_CAPI void *rml_RenderInterface_New(::onRenderGeometry onRenderGeometry, ::onGenerateTexture onGenerateTexture,
-                                         ::onLoadTexture onLoadTexture,
-                                         ::onReleaseTexture onReleaseTexture) {
-    return new RenderInterface(onRenderGeometry, onGenerateTexture, onLoadTexture, onReleaseTexture);
+                                         ::onLoadTexture onLoadTexture, ::onReleaseTexture onReleaseTexture,
+                                         ::onEnableScissorRegion onEnableScissorRegion, ::onSetScissorRegion onSetScissorRegion) {
+    return new RenderInterface(onRenderGeometry, onGenerateTexture, onLoadTexture, onReleaseTexture, onEnableScissorRegion, onSetScissorRegion);
 }

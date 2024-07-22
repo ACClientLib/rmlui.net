@@ -7,7 +7,14 @@ namespace RmlUiNet.Native
     internal static class RenderInterface
     {
         [DllImport("RmlUi.Native", EntryPoint = "rml_RenderInterface_New")]
-        public static extern IntPtr Create(OnRenderGeometry onRenderGeometry, OnGenerateTexture onGenerateTexture, OnLoadTexture onLoadTexture, OnReleaseTexture onReleaseTexture);
+        public static extern IntPtr Create(
+            OnRenderGeometry onRenderGeometry,
+            OnGenerateTexture onGenerateTexture,
+            OnLoadTexture onLoadTexture,
+            OnReleaseTexture onReleaseTexture,
+            OnEnableScissorRegion onEnableScissorRegion,
+            OnSetScissorRegion onSetScissorRegion
+        );
         
         internal delegate void OnRenderGeometry(
             [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)]
@@ -32,5 +39,9 @@ namespace RmlUiNet.Native
             string source);
         
         internal delegate void OnReleaseTexture(IntPtr textureHandle);
+
+        internal delegate void OnEnableScissorRegion(bool enable);
+
+        internal delegate void OnSetScissorRegion(int x, int y, int width, int height);
     }
 }
