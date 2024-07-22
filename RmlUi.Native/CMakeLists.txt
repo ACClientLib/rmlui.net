@@ -45,6 +45,7 @@ add_library(${PROJECT_NAME} SHARED
     "src/FileInterface.cpp"
     
     "src/Rml.cpp"
+    "src/Debugger.cpp"
     "src/Util.h"
     "src/Buffer.cpp"
     "include/Buffer.h"
