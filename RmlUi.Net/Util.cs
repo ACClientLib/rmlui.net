@@ -7,10 +7,10 @@ namespace RmlUiNet
     /*
     internal static unsafe partial class Extern
     {
-        [DllImport("RmlUi.Native")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl)]
         public static extern Buffer cs_buffer_new(ulong size);
 
-        [DllImport("RmlUi.Native")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl)]
         public static extern void cs_buffer_free(Buffer* str);
     }
 
@@ -53,14 +53,6 @@ namespace RmlUiNet
         {
             if (elementType == "class Rml::ElementDocument") {
                 return ElementDocument.Create(elementPtr);
-            } else if (elementType == "class Rml::ElementDataGrid") {
-                return ElementDataGrid.Create(elementPtr);
-            } else if (elementType == "class Rml::ElementDataGridCell") {
-                return ElementDataGridCell.Create(elementPtr);
-            } else if (elementType == "class Rml::ElementDataGridExpandButton") {
-                return ElementDataGridExpandButton.Create(elementPtr);
-            } else if (elementType == "class Rml::ElementDataGridRow") {
-                return ElementDataGridRow.Create(elementPtr);
             } else if (elementType == "class Rml::ElementDocument") {
                 return ElementDocument.Create(elementPtr);
             } else if (elementType == "class Rml::ElementForm") {

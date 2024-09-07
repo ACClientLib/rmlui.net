@@ -7,19 +7,19 @@ namespace RmlUiNet.Native
 {
     internal static class Debugger
     {
-        [DllImport("RmlUi.Native", EntryPoint = "rml_Debugger_Initialise")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_Debugger_Initialise")]
         public static extern void Initialise(IntPtr context);
 
-        [DllImport("RmlUi.Native", EntryPoint = "rml_Debugger_SetContext")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_Debugger_SetContext")]
         public static extern void SetContext(IntPtr context);
 
-        [DllImport("RmlUi.Native", EntryPoint = "rml_Debugger_Shutdown")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_Debugger_Shutdown")]
         public static extern void Shutdown();
 
-        [DllImport("RmlUi.Native", EntryPoint = "rml_Debugger_IsVisible")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_Debugger_IsVisible")]
         public static extern bool IsVisible();
 
-        [DllImport("RmlUi.Native", EntryPoint = "rml_Debugger_SetVisible")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_Debugger_SetVisible")]
         public static extern void SetVisible(bool visible);
     }
 }

@@ -5,31 +5,31 @@ namespace RmlUiNet.Native
 {
     internal static class Rml
     {
-        [DllImport("RmlUi.Native", EntryPoint = "rml_Initialise")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_Initialise")]
         public static extern void Initialise();
 
-        [DllImport("RmlUi.Native", EntryPoint = "rml_Shutdown")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_Shutdown")]
         public static extern void Shutdown();
 
-        [DllImport("RmlUi.Native", EntryPoint = "rml_SetRenderInterface")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_SetRenderInterface")]
         public static extern void SetRenderInterface(IntPtr renderInterface);
 
-        [DllImport("RmlUi.Native", EntryPoint = "rml_SetSystemInterface")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_SetSystemInterface")]
         public static extern void SetSystemInterface(IntPtr systemInterface);
 
-        [DllImport("RmlUi.Native", EntryPoint = "rml_SetFileInterface")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_SetFileInterface")]
         public static extern void SetFileInterface(IntPtr fileInterface);
 
-        [DllImport("RmlUi.Native", EntryPoint = "rml_LoadFontFace")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_LoadFontFace")]
         public static extern bool LoadFontFace(string fileName, bool fallbackFace, FontWeight weight);
 
-        [DllImport("RmlUi.Native", EntryPoint = "rml_CreateEventListener")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_CreateEventListener")]
         public static extern IntPtr CreateEventListener(OnProcessEvent onProcessEvent, OnAttachEvent onAttachEvent, OnDetachEvent onDetachEvent);
 
-        [DllImport("RmlUi.Native", EntryPoint = "rml_ReleaseEventListener")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_ReleaseEventListener")]
         public static extern void ReleaseEventListener(IntPtr eventListener);
 
-        [DllImport("RmlUi.Native", EntryPoint = "rml_RemoveContext")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_RemoveContext")]
         public static extern bool RemoveContext(string name);
 
         internal delegate void OnProcessEvent(IntPtr eventPtr);

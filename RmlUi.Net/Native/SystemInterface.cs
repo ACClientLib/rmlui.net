@@ -6,13 +6,16 @@ namespace RmlUiNet.Native
 {
     internal static class SystemInterface
     {
-        [DllImport("RmlUi.Native", EntryPoint = "rml_SystemInterface_New")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_SystemInterface_New")]
         public static extern IntPtr Create(OnGetElapsedTime onGetElapsedTime, OnTranslateString onTranslateString, OnLogMessage onLogMessage);
 
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         internal delegate double OnGetElapsedTime();
 
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         internal delegate string OnTranslateString(ref int changeCount, string input);
 
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         internal delegate bool OnLogMessage(LogType type, string message);
     }
 }

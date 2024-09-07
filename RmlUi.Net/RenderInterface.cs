@@ -35,7 +35,7 @@ namespace RmlUiNet
 
         public virtual void RenderGeometry(Vertex[] vertices, int vertexCount, int[] indices, int indexCount,
             ulong texture,
-            Vector2 translation)
+            Vector2f translation)
         {
         }
 

@@ -6,7 +6,7 @@ namespace RmlUiNet.Native
 {
     internal static class FileInterface
     {
-        [DllImport("RmlUi.Native", EntryPoint = "rml_FileInterface_New")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_FileInterface_New")]
         public static extern IntPtr Create(
             OnOpen onOpen,
             OnClose onClose,

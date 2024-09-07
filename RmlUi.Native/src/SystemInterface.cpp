@@ -28,13 +28,14 @@ public:
     }
 
     int TranslateString(Rml::String &translated, const Rml::String &input) override {
-        int changeCount;
-        translated = (*m_onTranslateString)(&changeCount, input.c_str());
+        int changeCount = 0;
+        //translated = (*m_onTranslateString)(&changeCount, input.c_str());
 
         return changeCount;
     }
 
     bool LogMessage(Rml::Log::Type type, const Rml::String &message) override {
+        std::cout << "RmlUi::SystemInterface::LogMessage: [" << type << "]" << message.c_str()  << " (" << message.size() << ")\n";
         return (*m_onLogMessage)(type, message.c_str());
     }
 

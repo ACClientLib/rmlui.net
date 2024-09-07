@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "cstddef": "cpp",
+    "array": "cpp",
+    "vector": "cpp",
+    "xstring": "cpp",
+    "xutility": "cpp",
+    "*.rh": "cpp"
+  }
+}

@@ -67,13 +67,13 @@ namespace RmlUiNet
     public readonly struct Vertex
     {
         /// <summary>Two-dimensional position of the vertex (usually in pixels).</summary>
-        public readonly Vector2 Position;
+        public readonly Vector2f Position;
 
         /// <summary>RGBA-ordered 8-bit / channel colour.</summary>
         public readonly ColorB Colour;
 
         /// <summary>Texture coordinate for any associated texture.</summary>
-        public readonly Vector2 TextureCoordinates;
+        public readonly Vector2f TextureCoordinates;
     }
 
     [StructLayout(LayoutKind.Sequential)]

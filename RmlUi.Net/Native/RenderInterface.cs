@@ -6,7 +6,7 @@ namespace RmlUiNet.Native
 {
     internal static class RenderInterface
     {
-        [DllImport("RmlUi.Native", EntryPoint = "rml_RenderInterface_New")]
+        [DllImport("RmlUiNative", CallingConvention = CallingConvention.Cdecl, EntryPoint = "rml_RenderInterface_New")]
         public static extern IntPtr Create(
             OnRenderGeometry onRenderGeometry,
             OnGenerateTexture onGenerateTexture,
@@ -24,7 +24,7 @@ namespace RmlUiNet.Native
             int[] indices,
             int indexCount,
             ulong texture,
-            Vector2 translation);
+            Vector2f translation);
         
         internal delegate bool OnGenerateTexture(
             out ulong textureHandle,
