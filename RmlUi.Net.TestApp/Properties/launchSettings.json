@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "RmlUi.Net.TestApp": {
-      "commandName": "Project",
-      "nativeDebugging": true
-    }
-  }
-}
