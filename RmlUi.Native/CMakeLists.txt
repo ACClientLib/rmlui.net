@@ -25,7 +25,7 @@ endif()
 
 # add external libraries
 add_subdirectory("ext/freetype")
-set(FREETYPE_LIBRARY freetype)
+set(FREETYPE_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/build/lib/Debug/freetyped.lib")
 set(FREETYPE_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/ext/freetype/include")
 
 set(BUILD_SHARED_LIBS OFF)
@@ -58,6 +58,7 @@ include_directories(${PROJECT_NAME}
 target_compile_definitions(${PROJECT_NAME} PUBLIC "RMLUI_STATIC_LIB")
 
 target_link_libraries(${PROJECT_NAME}
+    freetype
     RmlUi::Core
     RmlUi::Debugger
 )
